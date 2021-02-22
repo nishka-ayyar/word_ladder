@@ -80,7 +80,7 @@ def verify_word_ladder(ladder):
 
 def _adjacent(word1, word2):
     '''
-    Returns True if the input words differ by only a single character;
+    Returns True if the inputted words differ by only a single character;
     returns False otherwise.
 
     >>> _adjacent('phone','phony')
