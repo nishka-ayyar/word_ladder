@@ -40,18 +40,17 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     dictionary = [word.strip() for word in fileopen.readlines()]
     if start_word == end_word:
         return [end_word]
-    dict2 = dictionary.copy()
     while queue:
         el = queue.popleft()
-        for word in dict2:
+        for word in dictionary:
             if _adjacent(word, el[-1]):
                 if word == end_word:
                     el.append(word)
                     return el
-                copy = el.copy()
+                copy = el[:]
                 copy.append(word)
                 queue.append(copy)
-                dict2.remove(word)
+                dictionary.remove(word)
 
 
 def verify_word_ladder(ladder):
